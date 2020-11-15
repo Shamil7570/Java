@@ -1,0 +1,5 @@
+<root>
+    <item name='java.lang.Runnable void run()'>
+        <annotation name='java.lang.Deprecated'/>
+    </item>
+</root>

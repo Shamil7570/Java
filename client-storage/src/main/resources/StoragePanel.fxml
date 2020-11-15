@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="768.0" prefWidth="1024.0"
+	xmlns="http://javafx.com/javafx/8.0.171"
+	xmlns:fx="http://javafx.com/fxml/1" fx:id="rootPane"
+	fx:controller="ru.skhanov.mycloudstoreclient.fxcontrollers.StoragePanelFxController">
+	<children>
+		<MenuBar>
+			<menus>
+				<Menu mnemonicParsing="false" text="File">
+					<items>
+						<MenuItem mnemonicParsing="false" text="Upload" onAction="#uploadFileFormOs"/>
+						<MenuItem mnemonicParsing="false" text="Download" onAction="#downloadFileToOs" />
+						<MenuItem mnemonicParsing="false" text="Exit" onAction="#exitToSingUp"/>
+					</items>
+				</Menu>
+				<Menu mnemonicParsing="false" text="Help">
+					<items>
+						<MenuItem mnemonicParsing="false" text="Help" onAction="#help"/>
+						<MenuItem mnemonicParsing="false" text="About" onAction="#about"/>
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+		<HBox alignment="CENTER" prefHeight="52.0" prefWidth="1024.0">
+			<children>
+				<Label alignment="CENTER" contentDisplay="CENTER"
+					prefHeight="30.0" prefWidth="150.0" text="local storage"
+					textAlignment="CENTER" textOverrun="CLIP">
+					<font>
+						<Font name="Arial" size="18.0" />
+					</font>
+				</Label>
+				<Button mnemonicParsing="false" onAction="#copyFileToCloud"
+					prefHeight="29.0" prefWidth="100.0" text="copy">
+					<HBox.margin>
+						<Insets left="20.0" />
+					</HBox.margin>
+				</Button>
+				<Button mnemonicParsing="false" onAction="#moveFileToCloud"
+					prefHeight="29.0" prefWidth="100.0" text="move">
+					<HBox.margin>
+						<Insets left="10.0" />
+					</HBox.margin>
+				</Button>
+				<Button mnemonicParsing="false" prefHeight="29.0"
+					prefWidth="100.0" text="delete" onAction="#deleteLocalFile">
+					<HBox.margin>
+						<Insets left="10.0" />
+					</HBox.margin>
+				</Button>
+				<Label alignment="CENTER" contentDisplay="CENTER"
+					prefHeight="30.0" prefWidth="150.0" text="cloud storage"
+					textAlignment="CENTER" textOverrun="CLIP">
+					<font>
+						<Font name="Arial" size="18.0" />
+					</font>
+					<HBox.margin>
+						<Insets left="40.0" />
+					</HBox.margin>
+				</Label>
+				<Button mnemonicParsing="false" onAction="#copyFileFromCloud"
+					prefHeight="29.0" prefWidth="100.0" text="copy" />
+				<Button mnemonicParsing="false" prefHeight="29.0"
+					prefWidth="100.0" text="move" onAction="#moveFileFromClod">
+					<HBox.margin>
+						<Insets left="10.0" />
+					</HBox.margin>
+				</Button>
+				<Button mnemonicParsing="false" prefHeight="29.0"
+					prefWidth="100.0" text="delete" onAction="#deleteFileFromCloud">
+					<HBox.margin>
+						<Insets left="10.0" />
+					</HBox.margin>
+				</Button>
+			</children>
+		</HBox>
+		<HBox prefHeight="707.0" prefWidth="1024.0">
+			<children>
+				<TableView fx:id="localTable" prefHeight="707.0"
+					prefWidth="500.0">
+					<HBox.margin>
+						<Insets left="10.0" />
+					</HBox.margin>
+				</TableView>
+				<TableView fx:id="cloudTable" prefHeight="707.0"
+					prefWidth="500.0">
+					<HBox.margin>
+						<Insets left="14.0" right="10.0" />
+					</HBox.margin>
+				</TableView>
+			</children>
+		</HBox>
+		<HBox alignment="CENTER" prefHeight="22.0" prefWidth="1024.0" />
+	</children>
+</VBox>
